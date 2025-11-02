@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isometric | Indie Game Developer</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Bai Jamjuree', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #0e0e10;
+      color: #f0f0f0;
+    }
+
+    header {
+      background: #16161a;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #00c6ff;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #00c6ff;
+    }
+
+    nav a {
+      color: #f0f0f0;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00c6ff;
+    }
+
+    section {
+      padding: 100px 80px;
+      text-align: center;
+    }
+
+    #hero {
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      padding: 140px 60px;
+      border-bottom-left-radius: 80px;
+      border-bottom-right-radius: 80px;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    #hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      opacity: 0.95;
+      max-width: 800px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    #about, #games, #contact {
+      background: #16161a;
+      border-radius: 20px;
+      margin: 60px auto;
+      max-width: 1000px;
+      padding: 60px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease;
+    }
+
+    #about:hover, #games:hover, #contact:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #00c6ff;
+      font-size: 2rem;
+      margin-bottom: 25px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      color: #c9c9c9;
+    }
+
+    .game-links a {
+      display: inline-block;
+      margin: 15px 20px;
+      padding: 12px 25px;
+      border-radius: 30px;
+      background: #0072ff;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .game-links a:hover {
+      background: #00c6ff;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      background: #0c0c0e;
+      text-align: center;
+      padding: 25px;
+      font-size: 0.9rem;
+      color: #999;
+      letter-spacing: 0.3px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        padding: 20px;
+      }
+      nav a {
+        margin: 10px;
+      }
+      section {
+        padding: 60px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>
+      <img src="iso.png" alt="Isometric Logo" class="logo">
+      Isometric
+    </h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#games">Games</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <h2>Welcome to Isometric</h2>
+    <p>
+      I’m a hobbyist indie game developer who loves building immersive, creative, and thought-provoking experiences.  
+      Every game I make is a small world with its own story, atmosphere, and personality.
+    </p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m Isometric, a passionate developer who experiments with game design, art, and storytelling.  
+      My goal is to create unique games that leave a lasting impression — whether through minimalist visuals, emotional soundscapes, or clever mechanics.  
+      I’m always learning, exploring, and building one pixel at a time.
+    </p>
+  </section>
+
+  <section id="games">
+    <h2>My Games & Links</h2>
+    <p>Check out my latest creations and updates on these platforms:</p>
+    <div class="game-links">
+      <a href="https://isometricdev.itch.io" target="_blank">Play My Games on Itch.io</a>
+      <a href="https://youtube.com/@IsometricDev" target="_blank">Watch on YouTube</a>
+    </div>
+  </section>
+  <section id="contact">
+  <h2>Contact</h2>
+  <p>
+    Got feedback, collaboration ideas, or just want to chat about game development?  
+    I’d love to hear from you. You can reach me at the email below:
+  </p>
+  <div class="game-links">
+    <button onclick="copyEmail()" style="
+      background:#0072ff;
+      color:white;
+      border:none;
+      padding:12px 30px;
+      border-radius:30px;
+      font-weight:600;
+      font-size:1rem;
+      cursor:pointer;
+      transition:0.3s;
+    ">theisometricdev[at]gmail[dot]com</button>
+  </div>
+</section>
+
+<script>
+function copyEmail() {
+  navigator.clipboard.writeText("theisometricdev@gmail.com");
+  alert("Email copied to clipboard!");
+}
+</script>
+
+
+  <footer>
+    © 2025 Isometric — Indie Game Developer. All Rights Reserved.
+  </footer>
+</body>
+</html>
